@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>{$title}</title>
+
+
+<link rel="stylesheet" href="__PUBLIC__/Css/home/reset.css" type="text/css" media="screen" />
+<!-- Main Stylesheet -->
+<link rel="stylesheet" href="__PUBLIC__/Css/home/style.css" type="text/css" media="screen" />
+<!-- Invalid Stylesheet. This makes stuff look pretty. Remove it if you want the CSS completely valid -->
+<link rel="stylesheet" href="__PUBLIC__/Css/home/invalid.css" type="text/css" media="screen" />
+
+
+<script type="text/javascript" src="__PUBLIC__/Js/home/jquery-1.3.2.min.js"></script>
+<!-- jQuery Configuration -->
+<script type="text/javascript" src="__PUBLIC__/Js/home/simpla.jquery.configuration.js"></script>
+<!-- Facebox jQuery Plugin -->
+<script type="text/javascript" src="__PUBLIC__/Js/home/facebox.js"></script>
+<!-- jQuery WYSIWYG Plugin -->
+<script type="text/javascript" src="__PUBLIC__/Js/home/jquery.wysiwyg.js"></script>
+<script>
+			function show(obj){
+				obj.src="__APP__/Common/verify/random/"+Math.random();
+			}
+</script>
+<style>
+body{
+   font-size:20px;
+   font-family:"Microsoft Yahei";
+}
+</style>
+
+<link rel="shortcut" href="/bitbug_favicon.ico" />
+</head>
+
+<body id="login">
+   <div style = "margin:20px 0px 15px 1150px;">
+           <td colspan="2" style="font-size:17px;">注册&emsp;&emsp;&emsp;&emsp;<a href="{:U('Login/index')}">登录</a></td>
+            
+    </div>  
+<div id="login-wrapper" class="png_bg">
+
+  	<div id="login-top">
+    	<h1>{$title}</h1>
+    	<!-- Logo (221px width) -->
+    	<img id="logo" src="__PUBLIC__/Images/home/logo.png" alt="{$title}" />
+    </div>
+    
+   	<!-- Form表单 --> 
+  	<div id="login-content"> 
+    	<form action="__URL__/user" method="post">
+      	 <p>
+      		<label style = "font-size:20px;font-family:"Microsoft Yahei";">用户名</label>
+            <input  id = "username" class="text-input" type="text"  name="username"/>
+      		</p>
+
+            <div class="clear"></div>
+      		<p>
+        		<label style = "font-size:20px;font-family:"Microsoft Yahei";">密码</label>
+        		<input id = "userpass" class="text-input" type="password" name="password"/>
+      		</p>
+
+      		<div class="clear"></div>
+
+      		<p>
+            <label style = "font-size:20px;font-family:"Microsoft Yahei";">邮箱</label>
+            <input class="text-input" type="text" name="email"/></td>
+          </p>
+            
+      		<div class="clear"></div>
+      		
+      		<p>
+        		<label style = "font-size:20px;font-family:"Microsoft Yahei";">验证码</label>
+        		<input class="text-input" type="text" name="verify"/><img src="__APP__/Common/verify"/ onclick="show(this)">
+        		
+      		</p>
+      		
+      		<div class="clear"></div>
+      		
+      		<p>
+      		<input class="button" type="submit" value="注册"/>
+      		</p>
+    	</form>
+    	<script>
+        function valid(){
+            var names=$('#username').val();
+            var passs=$('#userpass').val();
+            if(names.replace(/\s+/g,"").length==0){
+                alert('请输入用户名！');
+                return false;
+            }
+            if(passs.replace(/\s+/g,"").length==0){
+                alert('请输入密码！');
+                return false;
+            }
+            return true;
+        }
+    </script>
+  </div>
+
+</div>	
+</body>
+</html>
